@@ -1,27 +1,26 @@
-const checkboxes = document.querySelectorAll("#myList input[type='checkbox']");
+const select = document.getElementById("mySelect");
 const selectedList = document.getElementById("selectedList");
 
-for (let checkbox of checkboxes) {
-  checkbox.addEventListener("change", function () {
-    if (this.checked) {
-      const label = this.nextElementSibling;
+select.addEventListener("change", function () {
+  const options = this.options;
+  for (let option of options) {
+    if (option.selected) {
       const selectedItem = document.createElement("div");
       selectedItem.classList.add("selected");
-      selectedItem.innerHTML = label.innerHTML;
+      selectedItem.innerHTML = option.text;
       selectedItem.addEventListener("click", function () {
-        checkbox.checked = false;
+        option.selected = false;
         selectedList.removeChild(selectedItem);
       });
       selectedList.appendChild(selectedItem);
     } else {
-      const label = this.nextElementSibling;
       const selectedItems = selectedList.querySelectorAll(".selected");
       for (let selectedItem of selectedItems) {
-        if (selectedItem.innerHTML === label.innerHTML) {
+        if (selectedItem.innerHTML === option.text) {
           selectedList.removeChild(selectedItem);
           break;
         }
       }
     }
-  });
-}
+  }
+});
