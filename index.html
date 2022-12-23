@@ -1,19 +1,21 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
     <title>Multi Select</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div id="selectedList"></div>
-      <select id="mySelect">
-        <option value="item1">Item 1</option>
-        <option value="item2">Item 2</option>
-        <option value="item3">Item 3</option>
+    <div class="container">
+      <select multiple data-multi-select-plugin>
+        <option value="Node js" selected>Node js</option>
+        <option value="ASP.NET" selected>ASP.NET</option>
+        <option value="Flask">Flask</option>
+        <option value="Django">Django</option>
+        <option value="Ruby On Rails">Ruby On Rails</option>
+        <option value=".NET">.NET</option>
+        <option value="Express js">Express js</option>
       </select>
     </div>
     <script src="./script.js"></script>
